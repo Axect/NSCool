@@ -1,0 +1,17 @@
+digraph G {
+    // graph [ordering="out"];
+    "Topological Manifold" -> { Hausdorff "Locally Euclidean" "Second Countable" }[dir=back];
+    { rank=same; Hausdorff "Locally Euclidean" "Second Countable" };
+    Topology -> { "Topological Manifold" "Separate Axiom" };
+    "Urysohn's Lemma" -> "Partition of Unity"[color=blue,penwidth=1.0];
+    Hausdorff -> "Dieudonne's Theorem"[color=red,penwidth=1.0];
+    Paracompact -> "Dieudonne's Theorem"[color=red,penwidth=1.0];
+    "Separate Axiom" -> { Hausdorff Regular Normal };
+    Normal -> "Urysohn's Lemma"[color=blue,penwidth=1.0];
+    "Second Countable" -> "Michael's Theorem"[color=red,penwidth=1.0];
+    Regular -> "Michael's Theorem"[color=red,penwidth=1.0];
+    "Michael's Theorem" -> Paracompact[color=blue,penwidth=1.0];
+    // "Dieudonne's Theorem" -> Regular[color=blue,penwidth=1.0];
+    "Dieudonne's Theorem" -> Normal[color=blue,penwidth=1.0];
+    { Paracompact "Urysohn's Lemma" }
+}
