@@ -1,16 +1,23 @@
 # PROGRESS
 
+## 2019-12-02
+
+* Convert `density`
+    - [x] Tested (Weak)
+
 ## 2019-12-01
 
 * Fix error of `P_electron`
     * `Row` based -> `Col` based
+* Test`P_electron`
+    - [x] Tested (Strong)
 * Convert `pressure`
-    - [x] Tested
+    - [x] Tested (Weak)
 
 ## 2019-11-30
 
 * Convert `P_electron`
-    - [x] Tested
+    - [x] Tested (Weak)
 
 ## 2019-11-29
 

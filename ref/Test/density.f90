@@ -1,6 +1,30 @@
 module test_set
     contains
 
+subroutine density(T, P, A, Z, Rho)
+    !************************************************************
+    ! given T,P,A,Z, calculates Rho: uses Newton's method
+    ! and Rho as input is taken as a first guess
+    !************************************************************
+    ! ***** checked
+    implicit real*8(a-h, k-z)
+    eps = 1.d-3
+    !        print *,'--------------------------------'
+    !        print '(1a20,0p1f20.8)','--------->',Rho
+    100    Rho0 = Rho
+    call pressure(T, Rho0, A, Z, Pre0)
+    Rho1 = (1.d0 + eps) * Rho0
+    call pressure(T, Rho1, A, Z, Pre1)
+    f = Pre0 - P
+    f1 = (Pre1 - Pre0) / (Rho1 - Rho0)
+    dRho = -f / f1
+    Rho = Rho0 + dRho
+    !        print '(1a20,0p2f20.8,1p3e20.8)','--------->',Rho,Rho1,Pre0,Pre1
+    if (abs(dRho / Rho).lt.1.d-5) return
+    goto 100
+    return
+end
+
 subroutine pressure(T, Rho, A, Z, Pres)
     ! **** sept 1991 version, checked on sept 2
     implicit real*8(a-h, k-z)
@@ -147,11 +171,41 @@ END subroutine P_electron
 
 program test
     use test_set
-    real*8 T, Rho, A, Z, Pres
+    real*8 T, Rho, A, Z, Pres, OLDNE, OLDT, OLDF1
     T=1.
+    Pres=1.
     Rho=1.
     A=1.
     Z=1.
-    call pressure(T, Rho, A, Z, Pres)
-    write(*,*) Pres
+    call density(T, Pres, A, Z, Rho)
+    write(*,*) Rho
+    write(*,*) OLDNE, OLDT, OLDF1
 end program test
+
+! pressure
+!program test
+!    use test_set
+!    real*8 T, Rho, A, Z, Pres
+!    T=1.
+!    Rho=1.
+!    A=1.
+!    Z=1.
+!    call pressure(T, Rho, A, Z, Pres)
+!    write(*,*) Pres
+!end program test
+
+! P_electron
+!program test
+!    use test_set
+!    real*8 T, ne, Pel
+!    T = 2.
+!    ne = 1.
+!    Pel = 1E+10
+!    write(*,*) T, ne, Pel
+!    call P_electron(T, ne, Pel)
+!    write(*,*) OLDNE, OLDT, OLDF1
+!    write(*,*) T, ne, Pel
+!    call P_electron(T, ne, Pel)
+!    write(*,*) OLDNE, OLDT, OLDF1
+!    write(*,*) T, ne, Pel
+!end program test

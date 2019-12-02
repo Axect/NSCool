@@ -2,6 +2,30 @@ use std::f64::consts::PI;
 use peroxide::*;
 use std::f64::EPSILON;
 
+/// Density
+///
+/// # Description
+/// > given T,P,A,Z, calculates Rho: uses Newton's method
+/// > and Rho as input is taken as a first guess
+#[allow(non_snake_case)]
+pub fn density(T: f64, P: f64, A: f64, Z: f64, Rho: f64, Saved: &mut Vec<f64>) -> f64 {
+    let eps = 1e-3;
+    let mut rho = Rho;
+    loop {
+        let Rho0 = rho;
+        let Pre0 = pressure(T, Rho0, A, Z, Saved);
+        let Rho1 = (1f64 + eps) * Rho0;
+        let Pre1 = pressure(T, Rho1, A, Z, Saved);
+        let f = Pre0 - P;
+        let f1 = (Pre1 - Pre0) / (Rho1 - Rho0);
+        let dRho = - f / f1;
+        rho = Rho0 + dRho;
+        if (dRho / rho).abs() < 1e-5 {
+            return rho;
+        }
+    }
+}
+
 #[allow(non_snake_case)]
 pub fn pressure(T: f64, Rho: f64, A: f64, Z: f64, Saved: &mut Vec<f64>) -> f64 {
     use crate::NA;
