@@ -1,5 +1,10 @@
 # PROGRESS
 
+## 2019-12-10
+
+* Convert `tc_ioffe`
+    - [x] Tested (Strong)
+
 ## 2019-12-02
 
 * Convert `density`
