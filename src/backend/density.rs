@@ -1,6 +1,6 @@
-use std::f64::consts::PI;
+//use std::f64::consts::PI;
 use peroxide::*;
-use std::f64::EPSILON;
+//use std::f64::EPSILON;
 
 /// Density
 ///
@@ -29,10 +29,10 @@ pub fn density(T: f64, P: f64, A: f64, Z: f64, Rho: f64, Saved: &mut Vec<f64>) -
 #[allow(non_snake_case)]
 pub fn pressure(T: f64, Rho: f64, A: f64, Z: f64, Saved: &mut Vec<f64>) -> f64 {
     use crate::NA;
-    use crate::C as c;
-    use crate::HB as hb;
+//    use crate::C as c;
+//    use crate::HB as hb;
     use crate::KB as kb;
-    use crate::ME as me;
+//    use crate::ME as me;
 
     // =========================================================================
     // Calculate the electron density and ionization
@@ -88,12 +88,12 @@ pub fn P_electron(T: f64, NE: f64, Saved: &mut Vec<f64>) -> f64 {
         9.215560, 23.551504, 19.015888, 4.679944,
         3.693280, 8.8598680, 6.5007120, 1.334124
     ], 4, 4, Col);
-    let CU = matrix(vec![
-        3.4732080, 10.122156, 9.8473680, 3.1984200,
-        16.121172, 43.477194, 37.852852, 10.496830,
-        23.971040, 60.392810, 47.782844, 11.361074,
-        11.079840, 26.579604, 19.502136, 4.0023720
-    ], 4, 4, Col);
+//    let CU = matrix(vec![
+//        3.4732080, 10.122156, 9.8473680, 3.1984200,
+//        16.121172, 43.477194, 37.852852, 10.496830,
+//        23.971040, 60.392810, 47.782844, 11.361074,
+//        11.079840, 26.579604, 19.502136, 4.0023720
+//    ], 4, 4, Col);
     let NEHAT = NE / 1.7595E+30;
 
     let T1 = T / 5.93E+9;
@@ -149,7 +149,7 @@ pub fn P_electron(T: f64, NE: f64, Saved: &mut Vec<f64>) -> f64 {
             );
         }
 
-        F1 = (F + (NEHAT - NEF) / NEF1);
+        F1 = F + (NEHAT - NEF) / NEF1;
 
         if (NEF - NEHAT).abs() / NEHAT.abs() > epsilon || (F1 - F).abs() / F1.abs() > epsilon {
             continue;

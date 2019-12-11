@@ -1,5 +1,17 @@
 # PROGRESS
 
+## 2019-12-11
+
+* C-Wrapper for `tc.f90` : `tc.c`
+* New build file with `cc` : `build.rs`
+* New dependency : `libc`
+* New build-dependency : `cc`
+* Rust wrapper for `tc.c` : `tc.rs`
+* Should careful to wrap fortran code
+    ```shell script
+    gfortran -c tc.f90
+    ```
+
 ## 2019-12-10
 
 * Convert `tc_ioffe`
