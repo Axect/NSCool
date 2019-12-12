@@ -1,5 +1,4 @@
 extern crate nscool;
-use nscool::*;
 use nscool::backend::density::density;
 
 fn main() {

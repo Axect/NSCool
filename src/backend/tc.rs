@@ -7,7 +7,7 @@ extern {
     pub fn tcn1_sfb_(k: *const c_double) -> c_double;
     pub fn tcn1_ccdk_(k: *const c_double) -> c_double;
     pub fn tcn1_wap_(k: *const c_double) -> c_double;
-    pub fn tcn1_GC_(k: *const c_double) -> c_double;
+    pub fn tcn1_gc_(k: *const c_double) -> c_double;
     pub fn tcn1_gipsf_(k: *const c_double) -> c_double;
     pub fn tcn1_t72_(k: *const c_double) -> c_double;
     pub fn tcn1_ns_(k: *const c_double) -> c_double;
@@ -17,7 +17,7 @@ extern {
     pub fn tcn1_ccks_cbf_(k: *const c_double) -> c_double;
     pub fn tcn1_awp_2_(k: *const c_double) -> c_double;
     pub fn tcn1_awp_3_(k: *const c_double) -> c_double;
-    pub fn tcn1_bbllp_(k: *const c_double) -> c_double;
+//    pub fn tcn1_bbllp_(k: *const c_double) -> c_double;
     pub fn tcn1_sclbl96_(k: *const c_double) -> c_double;
     pub fn tcn1_sclbl96_pol_(k: *const c_double) -> c_double;
     pub fn tcn3_hgrr_(k: *const c_double) -> c_double;
@@ -58,10 +58,9 @@ pub fn tcn1_wap(k: f64) -> f64 {
     }
 }
 
-#[allow(non_snake_case)]
-pub fn tcn1_GC(k: f64) -> f64 {
+pub fn tcn1_gc(k: f64) -> f64 {
     unsafe {
-        tcn1_GC_(&k)
+        tcn1_gc_(&k)
     }
 }
 
@@ -94,34 +93,158 @@ pub fn tcn1_ao(k: f64) -> f64 {
         tcn1_ao_(&k)
     }
 }
-//pub fn tcn1_ccks_var_(k: f64) -> f64 { }
-//pub fn tcn1_ccks_cbf_(k: f64) -> f64 { }
-//pub fn tcn1_awp_2_(k: f64) -> f64 { }
-//pub fn tcn1_awp_3_(k: f64) -> f64 { }
-//pub fn tcn1_bbllp_(k: f64) -> f64 { }
-//pub fn tcn1_sclbl96_(k: f64) -> f64 { }
-//pub fn tcn1_sclbl96_pol_(k: f64) -> f64 { }
-//pub fn tcn3_hgrr_(k: f64) -> f64 { }
-//pub fn tcn3_ao_(k: f64) -> f64 { }
-//pub fn tcn3_t72_(k: f64) -> f64 { }
-//pub fn tcn3_t72_m1_(k: f64) -> f64 { }
-//pub fn tcn3_ao_m1_(k: f64) -> f64 { }
-//pub fn tcn3_bcll92_(k: f64) -> f64 { }
-//pub fn tcn3_eehjo96_nr_(k: f64) -> f64 { }
-//pub fn tcn3_eehjo96_r_(k: f64) -> f64 { }
-//pub fn tcp1_ccy_ms_(k: f64) -> f64 { }
-//pub fn tcp1_ccy_ps_(k: f64) -> f64 { }
-//pub fn tcp1_ccdk_(k: f64) -> f64 { }
-//pub fn tcp1_t73_(k: f64) -> f64 { }
-//pub fn tcp1_ns_(k: f64) -> f64 { }
-//pub fn tcp1_ao_(k: f64) -> f64 { }
-//pub fn tcp1_bcll92_(k: f64) -> f64 { }
-//pub fn tcp1_eeho_(k: f64) -> f64 { }
-//pub fn tcla1_bb_(k: f64, nbar: f64) -> f64 {
-//
+
+pub fn tcn1_ccks_var(k: f64) -> f64 {
+    unsafe {
+        tcn1_ccks_var_(&k)
+    }
+}
+
+pub fn tcn1_ccks_cbf(k: f64) -> f64 {
+    unsafe {
+        tcn1_ccks_cbf_(&k)
+    }
+}
+
+pub fn tcn1_awp_2(k: f64) -> f64 {
+    unsafe {
+        tcn1_awp_2_(&k)
+    }
+}
+
+pub fn tcn1_awp_3(k: f64) -> f64 {
+    unsafe {
+        tcn1_awp_3_(&k)
+    }
+}
+
+//pub fn tcn1_bbllp(k: f64) -> f64 {
+//    unsafe {
+//        tcn1_bbllp_(&k)
+//    }
 //}
 
+pub fn tcn1_sclbl96(k: f64) -> f64 {
+    unsafe {
+        tcn1_sclbl96_(&k)
+    }
+}
 
+pub fn tcn1_sclbl96_pol(k: f64) -> f64 {
+    unsafe {
+        tcn1_sclbl96_pol_(&k)
+    }
+}
+
+pub fn tcn3_hgrr(k: f64) -> f64 {
+    unsafe {
+        tcn3_hgrr_(&k)
+    }
+}
+
+pub fn tcn3_ao(k: f64) -> f64 {
+    unsafe {
+        tcn3_ao_(&k)
+    }
+}
+
+pub fn tcn3_t72(k: f64) -> f64 {
+    unsafe {
+        tcn3_t72_(&k)
+    }
+}
+
+pub fn tcn3_t72_m1(k: f64) -> f64 {
+    unsafe {
+        tcn3_t72_m1_(&k)
+    }
+}
+
+pub fn tcn3_ao_m1(k: f64) -> f64 {
+    unsafe {
+        tcn3_ao_m1_(&k)
+    }
+}
+
+pub fn tcn3_bcll92(k: f64) -> f64 {
+    unsafe {
+        tcn3_bcll92_(&k)
+    }
+}
+
+pub fn tcn3_eehjo96_nr(k: f64) -> f64 {
+    unsafe {
+        tcn3_eehjo96_nr_(&k)
+    }
+}
+
+pub fn tcn3_eehjo96_r(k: f64) -> f64 {
+    unsafe {
+        tcn3_eehjo96_r_(&k)
+    }
+}
+
+pub fn tcp1_ccy_ms(k: f64) -> f64 {
+    unsafe {
+        tcp1_ccy_ms_(&k)
+    }
+}
+
+pub fn tcp1_ccy_ps(k: f64) -> f64 {
+    unsafe {
+        tcp1_ccy_ps_(&k)
+    }
+}
+
+pub fn tcp1_ccdk(k: f64) -> f64 {
+    unsafe {
+        tcp1_ccdk_(&k)
+    }
+}
+
+pub fn tcp1_t73(k: f64) -> f64 {
+    unsafe {
+        tcp1_t73_(&k)
+    }
+}
+
+pub fn tcp1_ns(k: f64) -> f64 {
+    unsafe {
+        tcp1_ns_(&k)
+    }
+}
+
+pub fn tcp1_ao(k: f64) -> f64 {
+    unsafe {
+        tcp1_ao_(&k)
+    }
+}
+
+pub fn tcp1_bcll92(k: f64) -> f64 {
+    unsafe {
+        tcp1_bcll92_(&k)
+    }
+}
+
+pub fn tcp1_eeho(k: f64) -> f64 {
+    unsafe {
+        tcp1_eeho_(&k)
+    }
+}
+
+pub fn tcla1_bb(k: f64, nbar: f64) -> f64 {
+    unsafe {
+        tcla1_bb_(&k, &nbar)
+    }
+}
+
+pub fn spline_here(x: &Vec<f64>, y: &Vec<f64>, i_n: i32, yp1: f64, ypn: f64) -> Vec<f64> {
+    let mut y2: Vec<f64> = vec![0f64; i_n as usize];
+    unsafe {
+        spline_here_(x.as_ptr(), y.as_ptr(), &i_n, &yp1, &ypn, y2.as_mut_ptr())
+    }
+    y2
+}
 
 //#[derive(Debug, Copy, Clone)]
 //pub enum TCN1 {

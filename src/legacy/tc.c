@@ -15,7 +15,7 @@ extern double tcn1_ccks_var_(double *k);
 extern double tcn1_ccks_cbf_(double *k);
 extern double tcn1_awp_2_(double *k);
 extern double tcn1_awp_3_(double *k);
-extern double tcn1_bbllp_(double *k);
+//extern double tcn1_bbllp_(double *k);
 extern double tcn1_sclbl96_(double *k);
 extern double tcn1_sclbl96_pol_(double *k);
 extern double tcn3_hgrr_(double *k);

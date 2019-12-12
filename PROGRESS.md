@@ -2,6 +2,13 @@
 
 ## 2019-12-11
 
+### Main
+
+* Wrap `tc`
+    - [x] Tested (Weak)
+
+### Tools
+
 * C-Wrapper for `tc.f90` : `tc.c`
 * New build file with `cc` : `build.rs`
 * New dependency : `libc`
