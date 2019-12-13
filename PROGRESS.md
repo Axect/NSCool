@@ -1,5 +1,10 @@
 # PROGRESS
 
+## 2019-12-14
+
+* Convert `opacity`
+    - [ ] Tested
+
 ## 2019-12-11
 
 ### Main
