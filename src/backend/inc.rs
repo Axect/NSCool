@@ -51,6 +51,7 @@ pub struct Accretion {
     pub X_Edd: f64,
     pub i_acc: AccretionType,
     pub i_cycle: usize,
+    pub v_acc: Vec<f64>,
 }
 
 #[derive(Debug, Copy, Clone)]
