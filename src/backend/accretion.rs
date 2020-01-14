@@ -6,7 +6,7 @@ pub fn initialize_accretion_rate(acc: &mut Accretion, prof: &mut ProfileStar, gr
     let mut eta = 0f64;
     let mut X = 0f64;
     let mut opac = 0f64;
-    let (mut F_Edd, mut L_Edd, mut M_Edd) = (0f64, 0f64, 0f64);
+    let (mut F_Edd, L_Edd, mut M_Edd) = (0f64, 0f64, 0f64);
 
     if acc.m_dot0 > 1e+10 {         // m_dot in g/sec
         m_dot1 = acc.m_dot0;
@@ -22,7 +22,7 @@ pub fn initialize_accretion_rate(acc: &mut Accretion, prof: &mut ProfileStar, gr
     }
 
 //    let mass_acc = 0f64;
-    let mut tau_acc_r = 0f64;
+    let tau_acc_r: f64;
 
     match acc.i_acc {
         AccretionType::None => (),

@@ -5,3 +5,4 @@ pub mod tc;
 pub mod inc;
 pub mod opacity;
 pub mod accretion;
+pub mod boundary;

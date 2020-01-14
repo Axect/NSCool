@@ -1,5 +1,29 @@
 # PROGRESS
 
+## 2020-01-14
+
+### Main Process
+
+* Convert `boundary` (Not yet completed)
+    - [ ] Tested
+
+### Sub Process
+
+* Extract pure functions & subroutines of `boundary.f90` : `src/legacy/boundary.f90`
+* C-wrapper for `src/legacy/boundary.f90` : `src/legacy/boundary.c`
+* In `boundary.rs`, there are two kinds of functions
+    * Use `extern`
+        - [x] `fteff_ZARho`
+        - [x] `fteff_NT`
+        - [x] `fteff_GPE`
+        - [x] `fteff_acc`
+        - [x] `fteff_field_iron`
+        - [x] `splint1`
+        - [x] `spline1`
+    * Hand written
+        - [x] `fteff`
+        - [ ] `fteff_table`
+
 ## 2019-12-14
 
 * Convert `opacity`
