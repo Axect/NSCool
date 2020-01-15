@@ -1,0 +1,7 @@
+c_nu_str = 1e+21
+p_nu_str = 8.0
+c_con_str = 1e+19
+p_con_str = 0.0
+c_cv_str = 1e+20
+i_heat_convert = 1
+MeV_neutron = 10.0

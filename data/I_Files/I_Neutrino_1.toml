@@ -1,0 +1,19 @@
+[neutrino_emission_control]
+murca_increase = 0.0
+inu_durca = 1
+inu_eion = 1
+inu_plasma = 1
+inu_synch = 0
+inu_n1s0_pbf = 1
+inu_n3p2_pbf = 1
+inu_p_pbf = 1
+inu_bubble = 0
+inu_photo = 0
+inu_pair = 0
+
+[enhanced_neutrino_emission_control]
+rhoexo = 1.2e+25
+cexo = 1.0e+24
+pexo = 6
+pexosn = 0
+pexosp = 0

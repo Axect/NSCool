@@ -1,4 +1,5 @@
 extern crate peroxide;
+extern crate toml;
 
 pub const HB: f64 = 1.054588E-27;
 pub const KB: f64 = 1.380662E-16;

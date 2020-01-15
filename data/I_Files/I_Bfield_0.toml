@@ -1,0 +1,11 @@
+[magnetic_field]
+i_field = 0                 # 0: no B evol., 1: B at t_n-1, 2: B exact
+i_gr_field = 1              # 0: no GR effects, 1: With GR effects
+bfield0 = 0.0e+12           #
+i_0 = 113                   # Rho_0 = 1.6e+14
+i_1 = 289                   # Rho_1 = 1.0e+14 (not used)
+Q_imp = 0.1                 #
+start_b_diffusion = 0.0     # time, in years
+i_joule_heat = 0            #
+i_conb = 0                  #
+i_eleconb = 0               #

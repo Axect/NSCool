@@ -1,5 +1,6 @@
 use std::os::raw::{c_double, c_int};
-use crate::backend::inc::{Gravity, Bound};
+use crate::backend::inc::{Gravity};
+use peroxide::{DataFrame, WithNetCDF};
 
 #[allow(non_snake_case)]
 #[link(name = "boundary")]
@@ -19,10 +20,10 @@ pub fn fteff(Tb: f64, ifteff: usize, eta: f64, bfield: f64, istep: usize, time: 
         println!("Entering fteff");
     }
     let result = match ifteff {
-        0 => {
-            //fteff_table(Tb, Ts1, Ts2, grav, bound)
-            unimplemented!()
-        },
+//        0 => {
+//            //fteff_table(Tb, Ts1, Ts2, grav, bound)
+//            unimplemented!()
+//        },
         1 => fteff_GPE(Tb, grav),
         2 => fteff_NT(Tb, grav),
         3 => fteff_acc(Tb, eta, grav),
@@ -91,8 +92,20 @@ pub fn spline1(x: &Vec<f64>, y: &Vec<f64>, i_n: i32, yp1: f64, ypn: f64) -> Vec<
     y2
 }
 
-#[allow(non_snake_case)]
-pub fn fteff_table(Tb: f64, Ts1: f64, Ts2: f64, grav: &Gravity, bound: &mut Bound) -> f64 {
-
-    unimplemented!()
-}
+//#[allow(non_snake_case)]
+//pub fn fteff_table(Tb: f64, Ts1: f64, Ts2: f64, grav: &Gravity, bound: &mut Bound, read: &mut bool) -> f64 {
+//    let (Tb_acc0, f_TbTs) = (bound.Tb_acc0, bound.f_TbTs.as_str());
+//    if !*read {
+//        println!("-------------------------------------------------");
+//        println!("Using envelope boundary condition from table");
+//        println!("     {}", f_TbTs);
+//        println!("WARNING:   No gs14 correction applied ! ");
+//        println!("-------------------------------------------------");
+//
+//        // Read Netcdf file
+//        let df = DataFrame::read_nc(f_TbTs).expect(&format!("Can't open {}", f_TbTs));
+//        let jmax = df["jmax"][0];
+//    }
+//
+//    unimplemented!()
+//}

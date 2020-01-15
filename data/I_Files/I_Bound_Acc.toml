@@ -1,0 +1,5 @@
+[boundary_condition]
+i_fteff = 3         # 0: use table, 10,11: magnetar with Fe and Acc
+eta = 1.0           # for accreted env., i.e., i_fteff = 3
+mag_coeff = 3.0     # for magnetars, i.e., i_fteff = 10,11
+tb_acc0 = 0.0       #

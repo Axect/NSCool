@@ -10,6 +10,7 @@ edition = "2018"
 [dependencies]
 peroxide = { version = "0.19", features = ["O3", "dataframe"] }
 libc = "0.2"
+toml = "0.5"
 
 [build-dependencies]
 cc = { version = "1", features = ["parallel"] }

@@ -1,0 +1,51 @@
+[print_out_control]
+p_screen = 1
+debug = 0
+istep = 0
+p_teff = 1
+p_temp = 0
+p_core = 1
+i_dump1 = 1
+i_dump2 = 111
+i_dump3 = 421
+temp_min = 1e+4
+temp_ini = 1e+10
+
+[electron_specific_heat]
+i_cvel_nodeg = 0
+
+[effective_mass_control]
+emnco = 5
+emncr = 5
+emp = 3
+
+[initial_rotational_period]
+p0 = 0.1
+
+t_print = [
+    1.0e-10,
+    1.0e-4,
+    3.0e-4,
+    1.0e-3,
+    3.0e-3,
+    1.0e-2,
+    3.0e-2,
+    1.0e-1,
+    3.0e-1,
+    1.0e+0,
+    3.0e+0,
+    1.0e+1,
+    3.0e+1,
+    1.0e+2,
+    3.0e+2,
+    1.0e+3,
+    3.0e+3,
+    1.0e+4,
+    3.0e+4,
+    1.0e+5,
+    3.0e+5,
+    1.0e+6,
+    3.0e+6,
+    1.0e+7,
+    3.0e+7,
+]

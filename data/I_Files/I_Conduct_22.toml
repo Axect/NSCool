@@ -1,0 +1,5 @@
+[heat_transport_control]
+i_opacity = 0
+i_con_crust = 2
+i_con_core = 2
+Q_imp = 1e-10

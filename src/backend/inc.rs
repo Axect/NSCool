@@ -67,9 +67,9 @@ pub struct Gravity {
     pub compactness: usize,
 }
 
-#[allow(non_snake_case)]
-#[derive(Debug, Clone)]
-pub struct Bound {
-    pub Tb_acc0: f64,
-    pub f_TbTs: String,
-}
+//#[allow(non_snake_case)]
+//#[derive(Debug, Clone)]
+//pub struct Bound {
+//    pub Tb_acc0: f64,
+//    pub f_TbTs: String,
+//}
