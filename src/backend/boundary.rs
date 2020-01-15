@@ -15,7 +15,7 @@ extern {
 }
 
 #[allow(non_snake_case)]
-pub fn fteff(Tb: f64, ifteff: usize, eta: f64, bfield: f64, istep: usize, time: f64, Ts1: f64, Ts2: f64, Z: f64, A: f64, Rho: f64, debug: f64, grav: &Gravity, bound: &mut Bound) -> f64 {
+pub fn fteff(Tb: f64, ifteff: usize, eta: f64, bfield: f64, istep: usize, time: f64, Ts1: f64, Ts2: f64, Z: f64, A: f64, Rho: f64, debug: f64, grav: &Gravity) -> f64 {
     if debug >= 1f64 {
         println!("Entering fteff");
     }
