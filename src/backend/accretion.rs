@@ -69,9 +69,7 @@ pub fn accretion_rate(time: f64, dtime: f64, acc: &mut Accretion) -> f64 {
             if (time - dtime) <= acc.t_acc0 {
                 return acc.m_dot_ini;
             } else {
-                if dtime >= acc.t_acc1 {
-                    panic!("dtime larger than t_acc1!");
-                }
+                assert!(dtime < acc.t_acc1, "dtime can't larger than t_acc1!");
                 let time0 = time - dtime;
                 let time1 = time;
                 let i_cycle0 = ((time0 - acc.t_acc0) / acc.t_acc1) as usize;
@@ -124,6 +122,8 @@ pub fn accretion_rate(time: f64, dtime: f64, acc: &mut Accretion) -> f64 {
         }
     }
 }
+
+// Accreted Mass is deprecated
 
 pub fn accretion_velocity(m_dot: f64, acc: &mut Accretion, prof: &ProfileStar, star: &Star) {
     use std::f64::consts::PI;

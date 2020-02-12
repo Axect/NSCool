@@ -1,5 +1,15 @@
 # PROGRESS
 
+## 2020-02-12
+
+* Convert `accretion`
+    - [ ] Tested
+* Convert `conductivity` (Not yet)
+* Convert `.inc` files
+    * `pairing.inc/superfluid`
+    * `profile_comp.inc/profile_comp`
+    * `fermi.inc/fermi, effmass`
+
 ## 2020-01-15
 
 * Convert whole `I_Files/*.dat` to `data/I_Files/*.toml`

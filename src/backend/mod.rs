@@ -6,3 +6,5 @@ pub mod inc;
 pub mod opacity;
 pub mod accretion;
 pub mod boundary;
+pub mod conductivity_crust;
+pub mod conductivity;
