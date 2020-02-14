@@ -5,7 +5,7 @@
 ! *********************************************************************
 ! *********************************************************************
 ! *********************************************************************
-subroutine con_crust_ee (T, ne, kfe, lambda, debug)
+subroutine con_crust_ee(T, ne, kfe, lambda, debug)
     ! *********************************************************************
     ! * Calculates the conductivity due to electron-electron scattering   *
     ! * in the crust.                                                     *
@@ -461,7 +461,7 @@ subroutine OYAFORM(BARD, Index, Z, Anuc, A, xnuc, xnuct)
         Anuc = Z + Nin ! {nucleons within a nucleus}
         A = Anuc
         Rws = (A * .75 / PI / BARD)**.333333
-        if (Rws.lt.Rn) stop'OYAFORM: too large Rn for outer envelope!'
+        if (Rws.lt.Rn) stop 'OYAFORM: too large Rn for outer envelope!'
         aa = (A / BARD)**.333333 !  {cube size}
     elseif (Index.eq.3) then ! {spheres after drip}
         g = BARD * 100.
@@ -483,7 +483,7 @@ subroutine OYAFORM(BARD, Index, Z, Anuc, A, xnuc, xnuct)
         if(Rn.gt.Rws) Anuc = A
         aa = (A / BARD)**.333333 ! {cube size}
     else
-        stop'OYAFORM: invalid Index'
+        stop 'OYAFORM: invalid Index'
     endif
     Rp0eff = (Z / PI * .75 / np_in)**.333333
     Rp2eff = Rp * dsqrt((1. - 15. / (5. + tp) + 15. / (5. + 2. * tp) - 5. / (5. + 3. * tp)) / &
@@ -724,43 +724,43 @@ end
 ! * Calculates the conductivity due to electron-ion scattering        *
 ! * in the crust in the liquid phase.                                 *
 ! *********************************************************************
-subroutine con_crust_e_ion_YU (T, rho, a, z, &
-        sigma, lbdaei)
-    ! *********************************************************************
-    ! * Units are cgs-K                                                   *
-    ! *********************************************************************
-    ! * Checked on DEC. 6, 1990                                           *
-    ! *********************************************************************
-    implicit real*8 (a-h, k-z)
-    !       INCLUDE 'rho_limits.inc.f'
-    na = 6.022e23
-    kb = 1.38e-16
-    hb = 1.054e-27
-    e = 4.803e-10
-    c = 2.99792e10
-    pi = 3.14159265
-    ! ***************************
-    mue = (1. / z) * a
-    rho6 = rho / 1.e6
-
-    beta2 = 1.02 * (rho6 / mue)**(2. / 3.)&
-            / (1. + 1.02 * (rho6 / mue)**(2. / 3.))
-    beta = dsqrt(beta2)
-    gamma = 2.273e5 * z**2 * (rho / a)**(1. / 3.) / t
-    lambda = 1. / 6. * dlog(3. * pi**2 / 2. * z**2) + &
-            0.5 * dlog(1. + 2. / gamma) - beta2 / 2.
-    ! ************* correction from 2nd order cross coulomb section *****
-    !        alphab=1./137./beta*z
-    !        lambda=lambda+pi/2.*alphab*beta2*(1.+1.30*alphab)
-    !     1         /(1.+alphab**2*(0.71-0.54*beta2))
-    ! *********************************************************************
-    vf = beta * c
-    nukap = lambda * z * dsqrt(1. + (rho6 / mue)**(2. / 3.)) / 5.65e-17
-
-    lbdaei = 4.11e15 * (rho6 / mue) / dsqrt(1. + (rho6 / mue)**(2. / 3.)) * &
-            (t / 1.e6) * (1.e16 / nukap)
-    return
-end
+!subroutine con_crust_e_ion_YU (T, rho, a, z, &
+!        sigma, lbdaei)
+!    ! *********************************************************************
+!    ! * Units are cgs-K                                                   *
+!    ! *********************************************************************
+!    ! * Checked on DEC. 6, 1990                                           *
+!    ! *********************************************************************
+!    implicit real*8 (a-h, k-z)
+!    !       INCLUDE 'rho_limits.inc.f'
+!    na = 6.022e23
+!    kb = 1.38e-16
+!    hb = 1.054e-27
+!    e = 4.803e-10
+!    c = 2.99792e10
+!    pi = 3.14159265
+!    ! ***************************
+!    mue = (1. / z) * a
+!    rho6 = rho / 1.e6
+!
+!    beta2 = 1.02 * (rho6 / mue)**(2. / 3.)&
+!            / (1. + 1.02 * (rho6 / mue)**(2. / 3.))
+!    beta = dsqrt(beta2)
+!    gamma = 2.273e5 * z**2 * (rho / a)**(1. / 3.) / t
+!    lambda = 1. / 6. * dlog(3. * pi**2 / 2. * z**2) + &
+!            0.5 * dlog(1. + 2. / gamma) - beta2 / 2.
+!    ! ************* correction from 2nd order cross coulomb section *****
+!    !        alphab=1./137./beta*z
+!    !        lambda=lambda+pi/2.*alphab*beta2*(1.+1.30*alphab)
+!    !     1         /(1.+alphab**2*(0.71-0.54*beta2))
+!    ! *********************************************************************
+!    vf = beta * c
+!    nukap = lambda * z * dsqrt(1. + (rho6 / mue)**(2. / 3.)) / 5.65e-17
+!
+!    lbdaei = 4.11e15 * (rho6 / mue) / dsqrt(1. + (rho6 / mue)**(2. / 3.)) * &
+!            (t / 1.e6) * (1.e16 / nukap)
+!    return
+!end
 ! *********************************************************************
 ! *********************************************************************
 ! * From Yakovlev & Urpin, Sov. Astron. 24 (1980): 303                *

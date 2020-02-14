@@ -1,5 +1,11 @@
 # PROGRESS
 
+## 2020-02-14
+
+* Convert `conductivity_crust` (in process)
+    * `legacy/conductivity_crust.f90` : Fixed original code
+    * `legacy/conductivity_crust.c` : Wrapper
+    * `src/backend/conductivity_crust.rs` : Wrapper & Hand written
 ## 2020-02-12
 
 * Convert `accretion`

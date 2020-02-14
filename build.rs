@@ -8,4 +8,9 @@ fn main() {
         .file("src/legacy/boundary.c")
         .object("src/legacy/boundary.o")
         .compile("boundary");
+
+    cc::Build::new()
+        .file("src/legacy/conductivity_crust.c")
+        .object("src/legacy/conductivity_crust.o")
+        .compile("conductivity_crust");
 }

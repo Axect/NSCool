@@ -13,6 +13,14 @@
     ```fortran
     1	INU_N1S0_BPF
     ```
+* `NSCool/Code/conductivity_crust.f90` : No blank near `stop` at 625 line
+    ```fortran
+    if (Rws.lt.Rn) stop'OYAFORM: too large Rn for outer envelope!'
+    ```
+* `NSCool/Code/conductivity_crust.f90` : No blank near `stop` at 647 line
+    ```fortran
+    stop'OYAFORM: invalid Index'
+    ```
 
 ## Path
 
