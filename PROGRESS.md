@@ -1,5 +1,11 @@
 # PROGRESS
 
+## 2020-03-03
+
+* Finish `conductivity_crust`
+    * Write `con_crust`
+    * Should test!
+
 ## 2020-02-14
 
 * Convert `conductivity_crust` (in process)

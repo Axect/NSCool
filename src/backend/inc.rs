@@ -15,6 +15,12 @@ pub struct RhoLimits {
 }
 
 #[derive(Debug, Clone)]
+pub struct GammaLimits {
+    pub gamma_cryst: f64,
+    pub gamma_liq: f64
+}
+
+#[derive(Debug, Clone)]
 pub struct ProfileStar {
     pub rad: Vec<f64>,
     pub rrho: Vec<f64>,

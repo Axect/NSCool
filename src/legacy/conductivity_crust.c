@@ -3,11 +3,11 @@
 //
 
 // lambda is mutable (return)
-extern void con_crust_ee_(double* T, double* ne, double* lambda, double* debug);
+extern void con_crust_ee_(double* T, double* ne, double* kfe, double* lambda, double* debug);
 // sigma, lambda, nu_e_s, nu_e_l is mutable (return)
 extern void con_crust_e_phonon_BY_(double* Temp, double* rho, double* A, double* A1, double* Z, double* sigma, double* lambda, double* debug, double* nu_e_s, double* nu_e_l, double* rhodrip);
 extern void con_env_e_phon_ion_PBHY_(double* T, double* rho, double* A, double* A1, double* Z, double* sigma, double* lambda, double* debug, double* nu_e_s, double* nu_e_l);
-extern void con_env_e_phon_ion_GYP_(double* T, double* rho, double* A, double* A1, double* Z, double* sigma, double* lambda, double* debug, double* nu_e_s, double* nu_e_l, double* rhodrip);
+extern void con_e_phon_ion_GYP_(double* T, double* rho, double* A, double* A1, double* Z, int* ifs, double* sigma, double* lambda, double* debug, double* nu_e_s, double* nu_e_l, double* rhodrip);
 // Lam1, Lam2 is mutable (return)
 extern void get_lam_(double* s, double* w, double* Lam1, double* Lam2);
 
